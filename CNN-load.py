@@ -47,7 +47,7 @@ model.add(Dropout(0.3))
 # output layer
 model.add(Dense(10, activation='softmax'))
 
-model.load_weights('D:/tf/cifar10_model_weights.h5')
+model.load_weights('cifar10_model_weights.h5')
 
 
 
