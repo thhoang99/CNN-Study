@@ -133,18 +133,7 @@ class App:
             
     def url_image(self):
         self.tbox.delete('1.0', tkinter.END)
-        
-        
-        # step 1
-        filenames = tf.constant(["F:/a.jpg"])
-        labels = tf.constant([3])
-
-        # step 2: create a dataset returning slices of `filenames`
-        dataset = tf.data.Dataset.from_tensor_slices((filenames, labels))
-        print(dataset)
-        dataset = dataset.map(self.im_file_to_tensor)
-        print(dataset)
-        """try:
+try:
             response = requests.get(self.url.get())
             image = Image.open(BytesIO(response.content))
             image = image.resize((32, 32), Image.ANTIALIAS)
@@ -154,7 +143,7 @@ class App:
             predictions = model.predict(test_image)
             self.tbox.insert(tkinter.END, "Model prediction: %s" % class_names[np.argmax(predictions)])
         except:
-            self.tbox.insert(tkinter.END, "Not image or broken image") """ 
+            self.tbox.insert(tkinter.END, "Not image or broken image")
 
 
     def im_file_to_tensor(file, label):
